@@ -1,0 +1,82 @@
+﻿jtte_has_shih_mentor_trigger = {
+    OR = {
+        any_relation = { 
+            type = friend 
+            is_alive = yes 
+            has_trait = shih 
+        }
+        any_relation = { 
+            type = best_friend 
+            is_alive = yes 
+            has_trait = shih 
+        }
+        any_relation = { 
+            type = lover 
+            is_alive = yes 
+            has_trait = shih 
+        }
+        any_relation = { 
+            type = soulmate 
+            is_alive = yes 
+            has_trait = shih 
+        }
+    }
+}
+
+jtte_can_train_trigger = {
+    is_ai = no
+    is_adult = yes
+    POD_is_supehunter_trigger = yes
+    NOT = { has_trait = shih }
+    NOT = { has_character_flag = qiao_access }
+    has_character_flag = jtte_training_started
+}
+
+jtte_can_split_trigger = {
+    is_ai = no
+    has_trait = hun_and_po
+    NOT = { has_character_flag = jtte_soul_split_complete }
+}
+
+jtte_has_research_text_trigger = {
+    custom_tooltip = {
+        text = jtte_qiao_research_text_tt
+        any_character_artifact = {
+            OR = {
+                has_variable = baizetu
+                has_artifact_modifier = manual_of_yi_modifier
+            }
+        }
+    }
+}
+
+jtte_qiao_practice_trigger = {
+    calc_true_if = {
+        amount >= $COUNT$
+        has_perk = heavens_thunder_perk
+        has_perk = body_of_the_dragon_perk
+        has_perk = celestial_doorway_perk
+        has_perk = flames_of_the_phoenix_perk
+        has_perk = thousand_swords_perk
+        has_perk = bite_of_the_mu_perk
+        has_perk = divine_ordinance_perk
+        has_perk = mental_dominion_perk
+        has_perk = celestial_wind_perk
+    }
+}
+
+jtte_split_ritualist_trigger = {
+    is_alive = yes
+    is_capable_adult = yes
+    is_imprisoned = no
+    POD_is_vampire_or_abomination_trigger = yes
+    vampgeneration_less_or_equal_to_trigger = { LEVEL = 6 }
+    has_trait = bloodsorcery
+}
+
+jtte_split_vessel_trigger = {
+    is_alive = yes
+    is_adult = yes
+    has_trait = mortal
+}
+

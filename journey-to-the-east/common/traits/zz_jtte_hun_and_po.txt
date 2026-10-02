@@ -1,0 +1,82 @@
+﻿hun_and_po = {
+    monthly_lifestyle_xp_gain_mult = 0.25
+    tracks = {
+        jtte_hun = {
+            100 = {}
+        }
+        jtte_po = {
+            100 = { 
+                stress_gain_mult = 0.5 
+            }
+        }
+    }
+    shown_in_ruler_designer = no
+    icon = {
+        first_valid = {
+            # fallback
+            triggered_desc = { 
+                trigger = { 
+                    NOT = { exists = this } 
+                } 
+                desc = yinyang_balanced.dds 
+            }
+            triggered_desc = {
+                trigger = { has_character_flag = jtte_hun_flag }
+                desc = yang_imbalanced.dds
+            }
+            triggered_desc = { 
+                trigger = { 
+                    has_character_flag = jtte_po_flag 
+                } 
+                desc = yin_imbalanced.dds
+            }
+            desc = yinyang_balanced.dds
+        }
+    }
+
+    name = {
+        first_valid = {
+            triggered_desc = { 
+                trigger = { 
+                    NOT = { 
+                        exists = this 
+                    } 
+                } 
+                desc = trait_hun_and_po 
+            }
+            triggered_desc = {
+                trigger = { has_character_flag = jtte_hun_flag }
+                desc = trait_jtte_hun
+            }
+            triggered_desc = { 
+                trigger = { 
+                    has_character_flag = jtte_po_flag 
+                } 
+                desc = trait_jtte_po 
+            }
+            desc = trait_hun_and_po
+        }
+    }
+
+    desc = {
+        first_valid = {
+            triggered_desc = { 
+                trigger = { 
+                    NOT = { exists = this } 
+                } 
+                desc = trait_hun_and_po_desc 
+            }
+            triggered_desc = {
+                trigger = { has_character_flag = jtte_hun_flag }
+                desc = trait_jtte_hun_desc
+            }
+            triggered_desc = { 
+                trigger = { 
+                    has_character_flag = jtte_po_flag 
+                } 
+                desc = trait_jtte_po_desc 
+            }
+            desc = trait_hun_and_po_desc
+        }
+    }
+}

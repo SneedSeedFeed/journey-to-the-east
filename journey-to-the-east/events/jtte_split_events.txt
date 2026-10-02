@@ -1,0 +1,50 @@
+﻿namespace = jtte
+
+# The standard Conqueror story ends for landless characters and vassals.
+# Activate it once, after the NPC has established an independent landed realm.
+jtte.101 = {
+    type = character_event
+    hidden = yes
+    trigger = {
+        is_alive = yes
+        is_ai = yes
+        has_character_modifier = jtte_antagonist_modifier
+        NOT = { has_character_flag = jtte_conqueror_activated }
+        is_landed = yes
+        is_landless_adventurer = no
+        is_independent_ruler = yes
+        is_tributary = no
+    }
+    immediate = {
+        add_character_flag = jtte_conqueror_activated
+        if = {
+            limit = {
+                NOT = { any_owned_story = { story_type = story_conqueror } }
+            }
+            POD_become_scripted_conqueror = yes
+        }
+    }
+}
+
+# Creation happens once before the choice. Both options reference the same pair.
+jtte.100 = {
+    type = character_event
+    title = jtte.100.t
+    desc = jtte.100.desc
+    theme = faith
+    left_portrait = { character = root }
+    right_portrait = { character = scope:jtte_po }
+    immediate = { hidden_effect = { jtte_create_po_effect = yes } }
+    option = {
+        name = jtte.100.hun
+        custom_tooltip = jtte_stay_hun_tt
+        scope:jtte_po = { jtte_prepare_antagonist_effect = yes }
+    }
+    option = {
+        name = jtte.100.po
+        trigger = { scope:jtte_po = { is_playable_character = yes } }
+        add_internal_flag = special
+        custom_tooltip = jtte_play_po_tt
+        set_player_character = scope:jtte_po
+    }
+}

@@ -1,0 +1,79 @@
+﻿namespace = pod1230objectives
+
+# this override only exists to let recognised hunters see the right tooltip
+pod1230objectives.149 = {
+	id_override_priority = 1
+	type = character_event
+	content_source = dlc_POD
+	title = reckoning_dragon_river_war_objective_decision
+	desc = pod1230objectives.149.desc
+	theme = stewardship_duty_focus
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_epic_sacral_moment"
+	}
+
+	option = {
+		name = pod1230objectives.149.a
+
+		add_prestige = massive_prestige_value
+		dynasty = { add_dynasty_prestige = excessive_dynasty_prestige_value }
+		add_character_modifier = sun_curse_lifter_modifier
+
+		custom_tooltip = sunny_wankuei
+		set_global_variable = sunny_wankuei
+
+		if = {
+			limit = {
+				OR = { 
+					has_trait = shih 
+					has_character_flag = jtte_recognised 
+				}
+			}
+			custom_tooltip = shih_curse_lifter_tt
+
+			hidden_effect = {
+				religion:deviltigers_religion = {
+					every_faith = {
+						remove_doctrine = doctrine_supehunting_crime
+						add_doctrine = doctrine_supehunting_accepted
+					}
+				}
+				religion:resplendentcranes_religion = {
+					every_faith = {
+						remove_doctrine = doctrine_supehunting_crime
+						add_doctrine = doctrine_supehunting_accepted
+					}
+				}
+				religion:thousandwhispers_religion = {
+					every_faith = {
+						remove_doctrine = doctrine_supehunting_crime
+						add_doctrine = doctrine_supehunting_accepted
+					}
+				}
+				religion:boneflowers_religion = {
+					every_faith = {
+						remove_doctrine = doctrine_supehunting_crime
+						add_doctrine = doctrine_supehunting_accepted
+					}
+				}
+				religion:kueijin_religion = {
+					every_faith = {
+						remove_doctrine = doctrine_supehunting_crime
+						add_doctrine = doctrine_supehunting_accepted
+					}
+				}
+				religion:thrashingdragons_religion = {
+					every_faith = {
+						remove_doctrine = doctrine_supehunting_crime
+						add_doctrine = doctrine_supehunting_accepted
+					}
+				}
+			}
+		}
+	}
+}

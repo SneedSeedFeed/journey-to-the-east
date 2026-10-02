@@ -1,0 +1,6 @@
+﻿# can you tell i really want to make sure the P'o fucking hates you?
+jtte_rejected_half_opinion = { 
+	opinion = -1000 
+	years = 10000 
+	decaying = no 
+}

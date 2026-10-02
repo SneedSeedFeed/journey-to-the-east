@@ -1,0 +1,69 @@
+﻿jtte_purpose_attempt_effect = {
+    
+    hidden_effect = { 
+        set_variable = { 
+            name = jtte_purpose_approach 
+            value = flag:$APPROACH$ 
+        } 
+    }
+
+    duel = {
+        skill = $SKILL$
+        value = 10
+        30 = {
+            desc = jtte.purpose.$APPROACH$.comfortable
+            compare_modifier = {
+                value = scope:duel_value
+                multiplier = 2
+                min = -29
+                max = 29
+            }
+            hidden_effect = { 
+                set_variable = { 
+                    name = jtte_purpose_result 
+                    value = flag:comfortable 
+                } 
+            }
+            custom_tooltip = jtte_purpose_no_stress_tt
+        }
+        40 = {
+            desc = jtte.purpose.$APPROACH$.strained
+            hidden_effect = { 
+                set_variable = { 
+                    name = jtte_purpose_result 
+                    value = flag:strained 
+                } 
+            }
+            show_as_tooltip = { add_stress = 40 }
+        }
+        30 = {
+            desc = jtte.purpose.$APPROACH$.barely
+            compare_modifier = {
+                value = scope:duel_value
+                multiplier = -2
+                min = -29
+                max = 29
+            }
+            hidden_effect = { set_variable = { name = jtte_purpose_result value = flag:barely } }
+            show_as_tooltip = { add_stress = 80 }
+        }
+    }
+    trigger_event = { id = jtte.201 days = 1 }
+}
+
+jtte_create_test_vampire_effect = {
+    create_character = {
+        save_scope_as = jtte_test_vampire
+        age = 35
+        gender_female_chance = 50
+        culture = root.culture
+        faith = faith:viahumanitatis
+        dynasty = none
+        employer = character:POD_wraith_01
+        random_traits = no
+        trait = vampire
+        trait = calm
+        trait = patient
+        trait = gregarious
+    }
+}

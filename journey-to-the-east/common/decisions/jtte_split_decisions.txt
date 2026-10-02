@@ -1,0 +1,126 @@
+﻿jtte_split_research_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_misc.dds" }
+    desc = jtte_split_research_decision_desc
+    selection_tooltip = jtte_split_research_decision_tooltip
+    decision_group_type = major
+    ai_check_interval = 0
+
+    is_shown = { 
+        jtte_can_split_trigger = yes 
+        NOT = { 
+            has_character_flag = jtte_split_researched 
+        } 
+    }
+
+    is_valid = { 
+        is_adult = yes 
+        POD_is_vampire_or_abomination_trigger = yes 
+        calc_true_if = {
+            amount >= 3
+            has_trait = erudite
+            learning >= 20
+            has_trait = salubri
+            custom_tooltip = {
+                text = judge_research_origins_kueijin_objective_decision_baizetu # it'll do lol
+                any_character_artifact = { has_variable = baizetu }
+            }
+            vampgeneration_less_or_equal_to_trigger = { LEVEL = 4 }
+            OR = {
+                has_trait = sorcerer # putting this in an AND with the relevant gamerule was ugly af
+                has_trait = bloodsorcery
+            }
+        }
+    }
+
+    is_valid_showing_failures_only = { is_imprisoned = no }
+
+    cost = { piety = 500 }
+    effect = { add_character_flag = jtte_split_researched }
+
+    ai_potential = { always = no }
+    ai_will_do = { base = 0 }
+}
+
+jtte_split_soul_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_misc.dds" }
+    desc = jtte_split_soul_decision_desc
+    selection_tooltip = jtte_split_soul_decision_tooltip
+    decision_group_type = major
+    ai_check_interval = 0
+
+    is_shown = { 
+        jtte_can_split_trigger = yes
+        has_character_flag = jtte_split_researched
+        
+    }
+
+    is_valid = { 
+        is_adult = yes 
+        POD_is_vampire_or_abomination_trigger = yes 
+        custom_tooltip = { 
+            text = jtte_split_research_required_tt
+            has_character_flag = jtte_split_researched 
+        }
+        exists = dynasty 
+        exists = house 
+        has_ep3_dlc_trigger = yes 
+        is_at_war = no
+        custom_tooltip = {
+            text = jtte_split_ritualist_tt
+            OR = {
+                jtte_split_ritualist_trigger = yes
+                any_courtier = { jtte_split_ritualist_trigger = yes }
+            }
+        }
+        custom_tooltip = {
+            text = jtte_split_vessel_available_tt
+            any_prisoner = { jtte_split_vessel_trigger = yes }
+        } 
+    }
+
+    is_valid_showing_failures_only = {
+        is_imprisoned = no
+        custom_tooltip = {
+            text = jtte_split_vessel_selected_tt
+            exists = scope:selected_item
+            any_prisoner = {
+                this = scope:selected_item
+                jtte_split_vessel_trigger = yes
+            }
+        }
+    }
+    cost = { piety = 3000 gold = 1500 }
+    
+    widget = {
+        gui = "decision_view_widget_select_character"
+        controller = select_scope_object
+        setup_items = {
+            scope:actor = {
+                every_prisoner = {
+                    limit = { jtte_split_vessel_trigger = yes }
+                    add_to_list = item_list
+                }
+            }
+        }
+    }
+
+    effect = {
+        custom_tooltip = jtte_split_sacrifice_tt
+        scope:selected_item = {
+            save_scope_as = jtte_sacrifice
+            execute_opinion_effect = { 
+                VICTIM = scope:jtte_sacrifice
+                EXECUTIONER = root 
+            }
+            death = { 
+                death_reason = death_jtte_soul_vessel 
+                killer = root 
+            }
+        }
+        custom_tooltip = jtte_split_outcome_tt
+        trigger_event = jtte.100
+    }
+    
+    ai_potential = { always = no }
+    ai_will_do = { base = 0 }
+}

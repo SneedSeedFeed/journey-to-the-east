@@ -1,0 +1,21 @@
+﻿on_title_gain = {
+    on_actions = { jtte_check_antagonist_conqueror }
+}
+
+yearly_playable_pulse = {
+    on_actions = { jtte_check_antagonist_conqueror }
+}
+
+jtte_check_antagonist_conqueror = {
+    trigger = {
+        is_ai = yes
+        has_character_modifier = jtte_antagonist_modifier
+        NOT = { has_character_flag = jtte_conqueror_activated }
+    }
+    effect = {
+        trigger_event = { 
+            id = jtte.101 
+            days = 1 
+        }
+    }
+}

@@ -1,0 +1,14 @@
+﻿jtte_unbound_beast = {
+    shown_in_ruler_designer = no
+    icon = wight.dds
+    opposites = { 
+        golconda 
+        golconda_seeker 
+        azhi_dahaka 
+        azhi_dahaka_scholar 
+    }
+    flag = elder_perk_flag
+    flag = infinite_blood_flag
+    flag = free_vampire_shapeshifts_flag
+    flag = immune_to_frenzy_flag
+}

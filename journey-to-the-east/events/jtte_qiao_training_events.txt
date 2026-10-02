@@ -1,0 +1,1197 @@
+﻿namespace = jtte
+
+jtte.200 = {
+    type = character_event
+    title = jtte.200.t
+    desc = jtte.200.desc
+    theme = learning
+    left_portrait = { character = root }
+    right_portrait = { character = scope:jtte_test_vampire }
+    immediate = {
+        hidden_effect = {
+            jtte_create_test_vampire_effect = yes
+        }
+    }
+    option = {
+        name = jtte.200.lustful
+        trigger = { has_trait = lustful }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = lustful
+        skill = intrigue
+        custom_tooltip = jtte_purpose_lustful_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = lustful SKILL = intrigue }
+    }
+    option = {
+        name = jtte.200.chaste
+        trigger = { has_trait = chaste }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = chaste
+        skill = learning
+        custom_tooltip = jtte_purpose_chaste_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = chaste SKILL = learning }
+    }
+    option = {
+        name = jtte.200.gluttonous
+        trigger = { has_trait = gluttonous }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = gluttonous
+        skill = stewardship
+        custom_tooltip = jtte_purpose_gluttonous_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = gluttonous SKILL = stewardship }
+    }
+    option = {
+        name = jtte.200.temperate
+        trigger = { has_trait = temperate }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = temperate
+        skill = learning
+        custom_tooltip = jtte_purpose_temperate_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = temperate SKILL = learning }
+    }
+    option = {
+        name = jtte.200.greedy
+        trigger = { has_trait = greedy }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = greedy
+        skill = stewardship
+        custom_tooltip = jtte_purpose_greedy_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = greedy SKILL = stewardship }
+    }
+    option = {
+        name = jtte.200.generous
+        trigger = { has_trait = generous }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = generous
+        skill = diplomacy
+        custom_tooltip = jtte_purpose_generous_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = generous SKILL = diplomacy }
+    }
+    option = {
+        name = jtte.200.lazy
+        trigger = { has_trait = lazy }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = lazy
+        skill = intrigue
+        custom_tooltip = jtte_purpose_lazy_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = lazy SKILL = intrigue }
+    }
+    option = {
+        name = jtte.200.diligent
+        trigger = { has_trait = diligent }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = diligent
+        skill = diplomacy
+        custom_tooltip = jtte_purpose_diligent_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = diligent SKILL = diplomacy }
+    }
+    option = {
+        name = jtte.200.wrathful
+        trigger = { has_trait = wrathful }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = wrathful
+        skill = martial
+        custom_tooltip = jtte_purpose_wrathful_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = wrathful SKILL = martial }
+    }
+    option = {
+        name = jtte.200.calm
+        trigger = { has_trait = calm }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = calm
+        skill = learning
+        custom_tooltip = jtte_purpose_calm_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = calm SKILL = learning }
+    }
+    option = {
+        name = jtte.200.patient
+        trigger = { has_trait = patient }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = patient
+        skill = stewardship
+        custom_tooltip = jtte_purpose_patient_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = patient SKILL = stewardship }
+    }
+    option = {
+        name = jtte.200.impatient
+        trigger = { has_trait = impatient }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = impatient
+        skill = martial
+        custom_tooltip = jtte_purpose_impatient_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = impatient SKILL = martial }
+    }
+    option = {
+        name = jtte.200.arrogant
+        trigger = { has_trait = arrogant }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = arrogant
+        skill = diplomacy
+        custom_tooltip = jtte_purpose_arrogant_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = arrogant SKILL = diplomacy }
+    }
+    option = {
+        name = jtte.200.humble
+        trigger = { has_trait = humble }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = humble
+        skill = learning
+        custom_tooltip = jtte_purpose_humble_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = humble SKILL = learning }
+    }
+    option = {
+        name = jtte.200.deceitful
+        trigger = { has_trait = deceitful }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = deceitful
+        skill = intrigue
+        custom_tooltip = jtte_purpose_deceitful_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = deceitful SKILL = intrigue }
+    }
+    option = {
+        name = jtte.200.honest
+        trigger = { has_trait = honest }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = honest
+        skill = diplomacy
+        custom_tooltip = jtte_purpose_honest_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = honest SKILL = diplomacy }
+    }
+    option = {
+        name = jtte.200.craven
+        trigger = { has_trait = craven }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = craven
+        skill = intrigue
+        custom_tooltip = jtte_purpose_craven_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = craven SKILL = intrigue }
+    }
+    option = {
+        name = jtte.200.brave
+        trigger = { has_trait = brave }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = brave
+        skill = diplomacy
+        custom_tooltip = jtte_purpose_brave_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = brave SKILL = diplomacy }
+    }
+    option = {
+        name = jtte.200.shy
+        trigger = { has_trait = shy }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = shy
+        skill = intrigue
+        custom_tooltip = jtte_purpose_shy_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = shy SKILL = intrigue }
+    }
+    option = {
+        name = jtte.200.gregarious
+        trigger = { has_trait = gregarious }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = gregarious
+        skill = diplomacy
+        custom_tooltip = jtte_purpose_gregarious_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = gregarious SKILL = diplomacy }
+    }
+    option = {
+        name = jtte.200.ambitious
+        trigger = { has_trait = ambitious }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = ambitious
+        skill = stewardship
+        custom_tooltip = jtte_purpose_ambitious_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = ambitious SKILL = stewardship }
+    }
+    option = {
+        name = jtte.200.content
+        trigger = { has_trait = content }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = content
+        skill = learning
+        custom_tooltip = jtte_purpose_content_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = content SKILL = learning }
+    }
+    option = {
+        name = jtte.200.arbitrary
+        trigger = { has_trait = arbitrary }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = arbitrary
+        skill = intrigue
+        custom_tooltip = jtte_purpose_arbitrary_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = arbitrary SKILL = intrigue }
+    }
+    option = {
+        name = jtte.200.just
+        trigger = { has_trait = just }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = just
+        skill = learning
+        custom_tooltip = jtte_purpose_just_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = just SKILL = learning }
+    }
+    option = {
+        name = jtte.200.cynical
+        trigger = { has_trait = cynical }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = cynical
+        skill = learning
+        custom_tooltip = jtte_purpose_cynical_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = cynical SKILL = learning }
+    }
+    option = {
+        name = jtte.200.zealous
+        trigger = { has_trait = zealous }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = zealous
+        skill = learning
+        custom_tooltip = jtte_purpose_zealous_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = zealous SKILL = learning }
+    }
+    option = {
+        name = jtte.200.paranoid
+        trigger = { has_trait = paranoid }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = paranoid
+        skill = intrigue
+        custom_tooltip = jtte_purpose_paranoid_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = paranoid SKILL = intrigue }
+    }
+    option = {
+        name = jtte.200.trusting
+        trigger = { has_trait = trusting }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = trusting
+        skill = diplomacy
+        custom_tooltip = jtte_purpose_trusting_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = trusting SKILL = diplomacy }
+    }
+    option = {
+        name = jtte.200.compassionate
+        trigger = { has_trait = compassionate }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = compassionate
+        skill = diplomacy
+        custom_tooltip = jtte_purpose_compassionate_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = compassionate SKILL = diplomacy }
+    }
+    option = {
+        name = jtte.200.callous
+        trigger = { has_trait = callous }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = callous
+        skill = intrigue
+        custom_tooltip = jtte_purpose_callous_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = callous SKILL = intrigue }
+    }
+    option = {
+        name = jtte.200.sadistic
+        trigger = { has_trait = sadistic }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = sadistic
+        skill = intrigue
+        custom_tooltip = jtte_purpose_sadistic_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = sadistic SKILL = intrigue }
+    }
+    option = {
+        name = jtte.200.stubborn
+        trigger = { has_trait = stubborn }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = stubborn
+        skill = martial
+        custom_tooltip = jtte_purpose_stubborn_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = stubborn SKILL = martial }
+    }
+    option = {
+        name = jtte.200.fickle
+        trigger = { has_trait = fickle }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = fickle
+        skill = intrigue
+        custom_tooltip = jtte_purpose_fickle_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = fickle SKILL = intrigue }
+    }
+    option = {
+        name = jtte.200.eccentric
+        trigger = { has_trait = eccentric }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = eccentric
+        skill = learning
+        custom_tooltip = jtte_purpose_eccentric_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = eccentric SKILL = learning }
+    }
+    option = {
+        name = jtte.200.vengeful
+        trigger = { has_trait = vengeful }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = vengeful
+        skill = intrigue
+        custom_tooltip = jtte_purpose_vengeful_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = vengeful SKILL = intrigue }
+    }
+    option = {
+        name = jtte.200.forgiving
+        trigger = { has_trait = forgiving }
+        exclusive = yes
+        show_as_unavailable = { always = no }
+        trait = forgiving
+        skill = diplomacy
+        custom_tooltip = jtte_purpose_forgiving_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = forgiving SKILL = diplomacy }
+    }
+    option = {
+        name = jtte.200.fallback
+        trigger = {
+            NOT = {
+                any_character_trait = { has_trait_category = personality }
+            }
+        }
+        show_as_unavailable = { always = no }
+        fallback = yes
+        skill = learning
+        custom_tooltip = jtte_purpose_fallback_approach_tt
+        jtte_purpose_attempt_effect = { APPROACH = fallback SKILL = learning }
+    }
+}
+
+jtte.201 = {
+    type = character_event
+    title = jtte.201.t
+    theme = learning
+    left_portrait = { character = root }
+    right_portrait = { character = scope:jtte_test_vampire }
+    desc = {
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:lustful
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.lustful.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:lustful
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.lustful.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:lustful
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.lustful.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:chaste
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.chaste.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:chaste
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.chaste.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:chaste
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.chaste.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:gluttonous
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.gluttonous.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:gluttonous
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.gluttonous.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:gluttonous
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.gluttonous.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:temperate
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.temperate.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:temperate
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.temperate.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:temperate
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.temperate.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:greedy
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.greedy.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:greedy
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.greedy.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:greedy
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.greedy.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:generous
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.generous.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:generous
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.generous.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:generous
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.generous.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:lazy
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.lazy.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:lazy
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.lazy.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:lazy
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.lazy.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:diligent
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.diligent.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:diligent
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.diligent.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:diligent
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.diligent.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:wrathful
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.wrathful.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:wrathful
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.wrathful.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:wrathful
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.wrathful.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:calm
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.calm.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:calm
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.calm.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:calm
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.calm.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:patient
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.patient.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:patient
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.patient.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:patient
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.patient.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:impatient
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.impatient.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:impatient
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.impatient.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:impatient
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.impatient.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:arrogant
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.arrogant.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:arrogant
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.arrogant.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:arrogant
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.arrogant.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:humble
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.humble.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:humble
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.humble.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:humble
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.humble.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:deceitful
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.deceitful.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:deceitful
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.deceitful.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:deceitful
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.deceitful.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:honest
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.honest.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:honest
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.honest.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:honest
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.honest.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:craven
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.craven.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:craven
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.craven.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:craven
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.craven.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:brave
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.brave.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:brave
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.brave.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:brave
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.brave.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:shy
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.shy.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:shy
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.shy.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:shy
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.shy.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:gregarious
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.gregarious.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:gregarious
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.gregarious.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:gregarious
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.gregarious.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:ambitious
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.ambitious.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:ambitious
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.ambitious.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:ambitious
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.ambitious.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:content
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.content.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:content
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.content.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:content
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.content.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:arbitrary
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.arbitrary.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:arbitrary
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.arbitrary.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:arbitrary
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.arbitrary.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:just
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.just.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:just
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.just.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:just
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.just.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:cynical
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.cynical.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:cynical
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.cynical.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:cynical
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.cynical.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:zealous
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.zealous.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:zealous
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.zealous.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:zealous
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.zealous.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:paranoid
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.paranoid.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:paranoid
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.paranoid.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:paranoid
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.paranoid.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:trusting
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.trusting.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:trusting
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.trusting.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:trusting
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.trusting.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:compassionate
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.compassionate.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:compassionate
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.compassionate.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:compassionate
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.compassionate.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:callous
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.callous.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:callous
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.callous.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:callous
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.callous.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:sadistic
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.sadistic.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:sadistic
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.sadistic.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:sadistic
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.sadistic.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:stubborn
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.stubborn.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:stubborn
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.stubborn.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:stubborn
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.stubborn.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:fickle
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.fickle.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:fickle
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.fickle.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:fickle
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.fickle.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:eccentric
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.eccentric.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:eccentric
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.eccentric.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:eccentric
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.eccentric.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:vengeful
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.vengeful.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:vengeful
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.vengeful.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:vengeful
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.vengeful.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:forgiving
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.forgiving.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:forgiving
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.forgiving.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:forgiving
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.forgiving.barely
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:fallback
+                var:jtte_purpose_result = flag:comfortable
+            }
+            desc = jtte.purpose.fallback.comfortable
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:fallback
+                var:jtte_purpose_result = flag:strained
+            }
+            desc = jtte.purpose.fallback.strained
+        }
+        triggered_desc = {
+            trigger = {
+                var:jtte_purpose_approach = flag:fallback
+                var:jtte_purpose_result = flag:barely
+            }
+            desc = jtte.purpose.fallback.barely
+        }
+        desc = jtte.201.conclusion
+    }
+    option = {
+        name = jtte.201.a
+        if = {
+            limit = { var:jtte_purpose_result = flag:strained }
+            add_stress = 40
+        }
+        else_if = {
+            limit = { var:jtte_purpose_result = flag:barely }
+            add_stress = 80
+        }
+        add_character_flag = jtte_lesson_purpose
+        add_character_flag = jtte_training_complete
+        add_character_flag = qiao_access
+        custom_tooltip = jtte_purpose_access_tt
+        remove_character_flag = jtte_purpose_in_progress
+        remove_variable = jtte_purpose_approach
+        remove_variable = jtte_purpose_result
+        hidden_effect = {
+            scope:jtte_test_vampire ?= { POD_remove_dummyclone_effect = yes }
+        }
+    }
+}

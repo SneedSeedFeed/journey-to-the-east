@@ -1,0 +1,8 @@
+﻿on_trait_gained = {
+    on_actions = { jtte_on_trait_gained }
+}
+
+jtte_on_trait_gained = {
+    trigger = { has_trait = hun_and_po }
+    effect = { jtte_initialise_soul_tracks_effect = yes }
+}

@@ -1,0 +1,19 @@
+﻿# Load after PoD. Only these two scripted trigger definitions are replaced.
+POD_middle_kingdom_splat_trigger = {
+	OR = {
+        has_character_flag = jtte_recognised
+		POD_chi_user_trigger = yes
+		AND = {
+			has_trait = wraith
+			religion = religion:yellow_springs_religion
+		}
+		POD_eastern_fera_splat_trigger = yes
+	}
+}
+
+POD_qiao_elder_penalty_trigger = {
+	OR = {
+        has_character_modifier = higher_shih_modifier
+        has_character_flag = jtte_qiao_mastery
+    }
+}

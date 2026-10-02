@@ -1,0 +1,4 @@
+﻿death_jtte_soul_vessel = {
+    public_knowledge = yes
+    icon = "death_murder.dds"
+}

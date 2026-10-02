@@ -1,0 +1,215 @@
+﻿jtte_request_instruction_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_misc.dds" }
+    desc = jtte_request_instruction_decision_desc
+    selection_tooltip = jtte_request_instruction_decision_tooltip
+    decision_group_type = pod_splat
+    ai_check_interval = 0
+
+    is_shown = { 
+        is_ai = no 
+        is_adult = yes 
+        POD_is_supehunter_trigger = yes 
+        NOT = { has_trait = shih } 
+        NOT = { has_character_flag = qiao_access } 
+        NOT = { has_character_flag = jtte_training_started }
+        jtte_has_shih_mentor_trigger = yes
+    }
+
+    is_valid = { 
+        custom_tooltip = { 
+            text = jtte_mentor_tt 
+            jtte_has_shih_mentor_trigger = yes 
+        } 
+    }
+
+    is_valid_showing_failures_only = { 
+        is_imprisoned = no 
+    }
+    
+    cost = { prestige = 250 }
+    effect = { add_character_flag = jtte_training_started }
+
+    ai_potential = { always = no }
+    ai_will_do = { base = 0 }
+}
+
+jtte_train_body_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_misc.dds" }
+    desc = jtte_train_body_decision_desc
+    selection_tooltip = jtte_train_body_decision_tooltip
+    decision_group_type = pod_splat
+    ai_check_interval = 0
+
+    is_shown = { 
+        jtte_can_train_trigger = yes 
+        NOT = { has_character_flag = jtte_lesson_body } 
+    }
+
+    is_valid = {
+        calc_true_if = {
+            amount >= 2
+            prowess >= 15
+            martial >= 15
+            has_trait = lifestyle_blademaster
+            has_trait = whole_of_body
+            OR = { 
+                has_trait = athletic 
+                has_trait = diligent 
+                has_trait = temperate 
+                has_trait = strong 
+            }
+        }
+    }
+
+    is_valid_showing_failures_only = { is_imprisoned = no }
+
+    effect = { add_character_flag = jtte_lesson_body }
+
+    ai_potential = { always = no }
+    ai_will_do = { base = 0 }
+}
+
+jtte_train_mind_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_misc.dds" }
+    desc = jtte_train_mind_decision_desc
+    selection_tooltip = jtte_train_mind_decision_tooltip
+    decision_group_type = pod_splat
+    ai_check_interval = 0
+    
+    is_shown = { 
+        jtte_can_train_trigger = yes 
+        NOT = { has_character_flag = jtte_lesson_mind } 
+    }
+    
+    is_valid = {
+        calc_true_if = {
+            amount >= 2
+            learning >= 15
+            has_trait = erudite
+            jtte_has_research_text_trigger = yes
+            OR = { 
+                has_trait = patient 
+                has_trait = calm 
+                has_trait = humble 
+            }
+        }
+    }
+    
+    is_valid_showing_failures_only = { is_imprisoned = no }
+    
+    effect = { add_character_flag = jtte_lesson_mind }
+    
+    ai_potential = { always = no }
+    ai_will_do = { base = 0 }
+}
+
+jtte_train_purpose_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_misc.dds" }
+    desc = jtte_train_purpose_decision_desc
+    selection_tooltip = jtte_train_purpose_decision_tooltip
+    decision_group_type = pod_splat
+    ai_check_interval = 0
+    
+    is_shown = {
+        jtte_can_train_trigger = yes
+        has_character_flag = jtte_lesson_body
+        has_character_flag = jtte_lesson_mind
+        NOT = { has_character_flag = jtte_purpose_in_progress }
+    }
+    
+    is_valid_showing_failures_only = { is_imprisoned = no }
+    
+    effect = {
+        add_character_flag = jtte_purpose_in_progress
+        trigger_event = jtte.200
+    }
+    
+    ai_potential = { always = no }
+    ai_will_do = { base = 0 }
+}
+
+jtte_recognition_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_misc.dds" }
+    desc = jtte_recognition_decision_desc
+    selection_tooltip = jtte_recognition_decision_tooltip
+    decision_group_type = pod_splat
+    ai_check_interval = 0
+    
+    is_shown = { 
+        is_ai = no POD_splat_has_access_to_qiao = yes 
+        NOT = { has_trait = shih } 
+        NOT = { has_character_flag = jtte_recognised } 
+    }
+    
+    is_valid = { jtte_qiao_practice_trigger = { COUNT = 3 } }
+    
+    is_valid_showing_failures_only = { is_imprisoned = no }
+    
+    cost = { prestige = 250 }
+    effect = { 
+        add_character_flag = jtte_recognised 
+        add_character_modifier = jtte_recognised_modifier 
+        custom_tooltip = jtte_recognition_tt
+    }
+    
+    ai_potential = { always = no }
+    ai_will_do = { base = 0 }
+}
+
+jtte_qiao_discovery_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_misc.dds" }
+    desc = jtte_qiao_discovery_decision_desc
+    selection_tooltip = jtte_qiao_discovery_decision_tooltip
+    decision_group_type = pod_splat
+    ai_check_interval = 0
+    
+    is_shown = { 
+        is_ai = no 
+        POD_splat_has_access_to_qiao = yes 
+        is_immortal = yes 
+        NOT = { has_character_flag = jtte_qiao_researched } 
+        NOT = { has_character_flag = jtte_qiao_mastery } 
+    }
+    
+    is_valid = { OR = { learning >= 20 jtte_has_research_text_trigger = yes } }
+    
+    is_valid_showing_failures_only = { is_imprisoned = no }
+    
+    cost = { piety = 250 }
+    effect = { add_character_flag = jtte_qiao_researched }
+    
+    ai_potential = { always = no }
+    ai_will_do = { base = 0 }
+}
+
+jtte_qiao_implementation_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_misc.dds" }
+    desc = jtte_qiao_implementation_decision_desc
+    selection_tooltip = jtte_qiao_implementation_decision_tooltip
+    decision_group_type = pod_splat
+    ai_check_interval = 0
+    
+    is_shown = { 
+        is_ai = no 
+        POD_splat_has_access_to_qiao = yes 
+        has_character_flag = jtte_qiao_researched 
+        NOT = { has_character_flag = jtte_qiao_mastery } 
+    }
+    
+    is_valid = { 
+        is_immortal = yes 
+        jtte_qiao_practice_trigger = { COUNT = 1 }
+    }
+    
+    is_valid_showing_failures_only = { is_imprisoned = no }
+    
+    cost = { piety = 500 }
+    effect = { 
+        add_character_flag = jtte_qiao_mastery 
+        POD_qiao_elder_penalty_remove_effect = yes 
+        add_character_modifier = jtte_qiao_mastery_modifier 
+    }
+    
+    ai_potential = { always = no }
+    ai_will_do = { base = 0 }
+}

@@ -1,0 +1,354 @@
+﻿jtte_copy_supported_power_effect = {
+    POD_copy_vampire_modifiers_effect = yes
+    
+    # this is here specifically for judge -> vamp -> hun and po characters
+    POD_copy_flag_to_clone = { FLAG = qiao_access }
+    POD_copy_flag_to_clone = { FLAG = hekau_access }
+    POD_copy_flag_to_clone = { FLAG = tan_access }
+
+    POD_copy_flag_to_clone = { FLAG = vamp_discipline_access }
+    POD_copy_flag_to_clone = { FLAG = kj_arts_access }
+    POD_copy_flag_to_clone = { FLAG = demon_lores_access }
+
+    # our stuff
+    POD_copy_flag_to_clone = { FLAG = jtte_recognised }
+    POD_copy_flag_to_clone = { FLAG = jtte_qiao_mastery }
+    
+    # maybe remove yama king from the player post split? currently leaning on just letting players have their fun even if the hun soul as a yama king doesn't make too much sense
+    POD_copy_modifier_to_clone = { MODIFIER = yama_king_modifier }
+    POD_copy_modifier_to_clone = { MODIFIER = higher_shih_modifier }
+    POD_copy_modifier_to_clone = { MODIFIER = antediluvian_dominor_modifier }
+    POD_copy_modifier_to_clone = { MODIFIER = godly_knowledge_modifier }
+    POD_copy_modifier_to_clone = { MODIFIER = jtte_qiao_mastery_modifier }
+    POD_copy_modifier_to_clone = { MODIFIER = jtte_recognised_modifier }
+    POD_copy_modifier_to_clone = { MODIFIER = young_third_modifier }
+    # todo: more modifiers and flags
+    POD_copy_vanilla_lifestyle_perks_effect = yes
+    POD_copy_supernatural_lifestyle_perks_effect = yes
+}
+
+# the P'o was copied before this runs
+jtte_divide_personality_effect = {
+    # kinda conservative trait replacements. the is to have it not driven by faith to try and create a vaguely unambiguously good char
+
+    if = {
+        limit = { has_trait = sadistic }
+        remove_trait = sadistic
+        add_trait = compassionate
+    }
+    if = {
+        limit = { has_trait = callous }
+        remove_trait = callous
+        add_trait = compassionate
+    }
+    if = {
+        limit = { has_trait = wrathful }
+        remove_trait = wrathful
+        add_trait = calm
+    }
+    if = {
+        limit = { has_trait = vengeful }
+        remove_trait = vengeful
+        add_trait = forgiving
+    }
+    if = {
+        limit = { has_trait = deceitful }
+        remove_trait = deceitful
+        add_trait = honest
+    }
+    if = {
+        limit = { has_trait = arbitrary }
+        remove_trait = arbitrary
+        add_trait = just
+    }
+    if = {
+        limit = { has_trait = greedy }
+        remove_trait = greedy
+        add_trait = generous
+    }
+    jtte_fill_hun_personality_effect = yes
+    
+    # only remove the "bad" or overly impulsive stress traits. keeping contrite and improvident since they could arguably be seen as virtuous, especially since they give compassion and honor to AI
+    remove_trait = drunkard
+    remove_trait = hashishiyah
+    remove_trait = irritable
+    remove_trait = profligate
+    remove_trait = rakish
+    remove_trait = flagellant
+
+    # crimes / infamy traits are now the P'o's problem. arguably some of these might be considered useful, such as deviant, but I don't want to draw that line personally
+    remove_trait = adulterer
+    remove_trait = fornicator
+    remove_trait = deviant
+    remove_trait = kinslayer_1
+    remove_trait = kinslayer_2
+    remove_trait = kinslayer_3
+    remove_trait = incestuous
+    remove_trait = sodomite # your honour, i did not fuck that twink it was my evil twin
+    remove_trait = witch
+    remove_trait = cannibal
+    remove_trait = excommunicated
+    remove_trait = murderer
+    # todo: infamy traits added by PoD?
+
+    scope:jtte_po = {
+        remove_trait = compassionate
+        remove_trait = forgiving
+        remove_trait = honest
+        remove_trait = generous
+        remove_trait = temperate
+        remove_trait = humble
+        remove_trait = contrite
+        remove_trait = improvident
+        remove_trait = content
+        add_trait = ambitious
+    }
+}
+
+jtte_create_po_effect = {
+    save_scope_as = cloned_character
+    save_scope_as = jtte_hun
+    create_character = {
+        save_scope_as = jtte_po
+        age = scope:cloned_character.age
+        faith = scope:cloned_character.faith
+        culture = scope:cloned_character.culture
+        gender = scope:cloned_character
+        dynasty = scope:cloned_character.dynasty
+        location = scope:cloned_character.location
+        random_traits = no
+    }
+    hidden_effect_new_object = {
+        scope:jtte_po = {
+            POD_copy_base_skills_effect = { 
+                CLONED_CHAR = scope:cloned_character 
+                CLONE = scope:jtte_po 
+            }
+            copy_traits = scope:cloned_character
+            POD_clear_invalid_clone_traits = yes
+            POD_copy_trait_xp_for_clone_effect = yes
+            POD_copy_sexuality_effect = { ORIGIN = scope:cloned_character }
+            change_first_name = { template_character = scope:cloned_character }
+            POD_copy_physical_appearance_effect = yes
+            jtte_copy_supported_power_effect = yes
+            remove_trait = golconda
+            remove_trait = golconda_seeker
+            remove_trait = azhi_dahaka
+            remove_trait = azhi_dahaka_scholar
+            jtte_specialise_po_effect = yes
+            add_character_flag = jtte_soul_split_complete
+            set_variable = { 
+                name = jtte_other_half 
+                value = scope:jtte_hun 
+            }
+            set_house = scope:cloned_character.house
+            create_cadet_branch = {}
+            create_landless_adventurer_title_effect = { 
+                REASON = flag:conquest 
+                FLAVOR_CHAR = scope:jtte_hun 
+            }
+            add_gold = 1000
+            add_prestige = 1000
+            spawn_army = {
+                name = jtte_po_host
+                men_at_arms = { 
+                    type = armored_footmen 
+                    stacks = 5 
+                }
+                location = scope:jtte_hun.location
+                origin = scope:jtte_hun.location
+            }
+            set_relation_nemesis = scope:jtte_hun
+            add_opinion = { 
+                target = scope:jtte_hun 
+                modifier = jtte_rejected_half_opinion 
+            }
+        }
+    }
+    every_held_title = {
+        save_scope_as = jtte_claimed_title
+        scope:jtte_po = { add_pressed_claim = scope:jtte_claimed_title }
+    }
+    set_variable = { 
+        name = jtte_other_half 
+        value = scope:jtte_po 
+    }
+    add_character_flag = jtte_soul_split_complete
+    jtte_divide_personality_effect = yes
+    remove_trait = azhi_dahaka
+    remove_trait = azhi_dahaka_scholar
+    remove_trait = golconda_seeker
+    add_trait = golconda
+    jtte_specialise_hun_effect = yes
+    add_character_modifier = jtte_split_completion_modifier
+}
+ 
+jtte_prepare_antagonist_effect = {
+    add_character_modifier = jtte_antagonist_modifier
+    # Awarded only when the player remains with the Hun.
+    POD_set_military_order_precept = { PRECEPT = flag:specific }
+    set_variable = { 
+        name = military_order_rank 
+        value = 3 
+    }
+    add_character_modifier = ashen_grandmaster_numbers_3
+    add_character_modifier = ashen_grandmaster_specialists_3
+    add_trait = ashen_adventurer
+    add_trait_xp = {
+        trait = ashen_adventurer
+        track = ashen_grandmaster
+        value = 100
+    }
+    remove_trait = trusting
+    remove_trait = forgiving
+    add_trait = deceitful
+    add_trait = vengeful
+    POD_assign_lifestyle = { LIFESTYLE = skulduggery }
+    POD_assign_lifestyle = { LIFESTYLE = intimidation }
+}
+
+jtte_specialise_hun_effect = {
+    remove_character_flag = jtte_po_flag
+    add_character_flag = jtte_hun_flag
+    remove_trait = jtte_unbound_beast
+    
+    if = { 
+        limit = { NOT = { has_trait = hun_and_po } } 
+        add_trait = hun_and_po 
+    }
+    
+    add_trait_xp = { 
+        trait = hun_and_po 
+        track = jtte_hun 
+        value = 100 
+    }
+    add_trait_xp = { 
+        trait = hun_and_po 
+        track = jtte_po 
+        value = -100 
+    }
+}
+
+jtte_specialise_po_effect = {
+    remove_character_flag = jtte_hun_flag
+    add_character_flag = jtte_po_flag
+
+    if = { 
+        limit = { NOT = { has_trait = hun_and_po } } 
+        add_trait = hun_and_po 
+    }
+
+    add_trait_xp = { 
+        trait = hun_and_po 
+        track = jtte_hun value = -100 
+    }
+    add_trait_xp = { 
+        trait = hun_and_po 
+        track = jtte_po value = 100 
+    }
+    remove_trait = golconda
+    remove_trait = golconda_seeker
+    remove_trait = azhi_dahaka
+    remove_trait = azhi_dahaka_scholar
+    add_trait = jtte_unbound_beast
+}
+
+jtte_fill_hun_personality_effect = {
+    if = {
+        limit = {
+            any_character_trait = { 
+                count < 3 
+                has_trait_category = personality 
+            }
+            NOR = { 
+                has_trait = compassionate 
+                has_trait = callous 
+                has_trait = sadistic 
+            }
+        }
+        add_trait = compassionate
+    }
+    if = {
+        limit = {
+            any_character_trait = { 
+                count < 3 
+                has_trait_category = personality 
+            }
+            NOR = { has_trait = calm has_trait = wrathful }
+        }
+        add_trait = calm
+    }
+    if = {
+        limit = {
+            any_character_trait = { 
+                count < 3 
+                has_trait_category = personality 
+            }
+            NOR = { has_trait = forgiving has_trait = vengeful }
+        }
+        add_trait = forgiving
+    }
+    if = {
+        limit = {
+            any_character_trait = { 
+                count < 3 
+                has_trait_category = personality 
+            }
+            NOR = { has_trait = honest has_trait = deceitful }
+        }
+        add_trait = honest
+    }
+    if = {
+        limit = {
+            any_character_trait = { 
+                count < 3 
+                has_trait_category = personality 
+            }
+            NOR = { has_trait = just has_trait = arbitrary }
+        }
+        add_trait = just
+    }
+    if = {
+        limit = {
+            any_character_trait = { 
+                count < 3 
+                has_trait_category = personality 
+            }
+            NOR = { has_trait = generous has_trait = greedy }
+        }
+        add_trait = generous
+    }
+}
+
+
+jtte_initialise_soul_tracks_effect = {
+    if = {
+        limit = {
+            has_trait = hun_and_po
+            NOR = {
+                has_character_flag = jtte_hun_flag
+                has_character_flag = jtte_po_flag
+            }
+            has_trait_xp = { 
+                trait = hun_and_po 
+                track = jtte_hun 
+                value = 0 
+            }
+            has_trait_xp = { 
+                trait = hun_and_po 
+                track = jtte_po 
+                value = 0 
+            }
+        }
+        add_trait_xp = { 
+            trait = hun_and_po 
+            track = jtte_hun 
+            value = 100 
+        }
+        add_trait_xp = { 
+            trait = hun_and_po 
+            track = jtte_po 
+            value = 100 
+        }
+    }
+}

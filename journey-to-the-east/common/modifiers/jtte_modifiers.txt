@@ -1,0 +1,27 @@
+﻿jtte_qiao_mastery_modifier = { 
+    icon = health_positive 
+    learning = 1 
+}
+
+jtte_recognised_modifier = { 
+    icon = diplomacy_positive 
+    diplomacy = 1 
+}
+
+jtte_split_completion_modifier = {
+    icon = learning_positive
+    monthly_piety = 1
+    monthly_lifestyle_xp_gain_mult = 1.0
+}
+
+# to hopefuly make the P'o actually an annoyance
+jtte_antagonist_modifier = {
+    icon = intrigue_positive
+    intrigue = 10
+    owned_hostile_scheme_success_chance_add = 20
+    owned_hostile_scheme_success_chance_max_add = 10
+    owned_scheme_secrecy_add = 20
+
+    ai_vengefulness = 400 # the equivalent of 2 vengefuls (per the pdx wiki)
+    ai_honor = -100 # 2 deceitfuls
+}
